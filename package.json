@@ -1,0 +1,17 @@
+{
+  "name": "tech-demos",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "demo-1": "cd apps/demo-1 && bun run dev"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "engines": {
+    "node": ">=18",
+    "bun": ">=1.0"
+  }
+}
