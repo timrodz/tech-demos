@@ -1,5 +1,7 @@
 # Demo 1: vgpu UV Gradient
 
+![Animated UV Gradient Demo](./demo-screenshot.png)
+
 ## What it shows
 
 A fullscreen animated gradient shader powered by WebGPU, demonstrating how UV coordinates and time can create living, organic color patterns. The shader combines multiple sine waves at different frequencies to generate a soft plasma effect that continuously evolves.
