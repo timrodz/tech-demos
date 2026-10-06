@@ -2,11 +2,20 @@
 
 A collection of hyper-specific technical demonstrations built with modern web technologies.
 
+## Live Demos
+
+All demos are publicly available at: **https://timrodz.github.io/tech-demos/**
+
+Individual demos:
+- [Demo 1: WebGPU UV Gradient](https://timrodz.github.io/tech-demos/demo-1/) - Animated shader using WebGPU
+
 ## What's inside
 
 This is a Turborepo monorepo using Bun for package management. Each demo lives in `apps/` and focuses on a single, well-defined technical scenario—no boilerplate, no unnecessary dependencies.
 
 ## Running demos
+
+### Run locally
 
 From the repository root:
 
@@ -19,6 +28,15 @@ bun run demo-1
 ```
 
 Each demo includes its own README with technical details and rationale.
+
+### Build for production
+
+```bash
+# Build all demos and home page
+bun run build
+```
+
+This creates a `dist/` directory with the home page and all demo builds, ready for deployment.
 
 ## Adding new demos
 

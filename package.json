@@ -5,7 +5,11 @@
     "apps/*"
   ],
   "scripts": {
-    "demo-1": "cd apps/demo-1 && bun run dev"
+    "demo-1": "cd apps/demo-1 && bun run dev",
+    "build": "bun run build:clean && bun run build:demos && bun run build:home",
+    "build:clean": "rm -rf dist",
+    "build:demos": "cd apps/demo-1 && bun run build",
+    "build:home": "mkdir -p dist && cp apps/home/index.html dist/index.html"
   },
   "devDependencies": {
     "turbo": "^2.3.3"
