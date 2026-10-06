@@ -77,3 +77,12 @@ Each demo should:
 - Include comprehensive documentation
 - Be independently runnable
 - Compile and work on first try
+
+## Design & Polish
+
+Demo Lab uses [Impeccable](https://impeccable.style/) for design consistency. The visual system and product context are documented in:
+
+- `DESIGN.md` — Color palette, typography, and UI principles inherited from [Juan's portfolio](https://github.com/timrodz/portfolio)
+- `PRODUCT.md` — Purpose, users, and design philosophy for Demo Lab
+
+Cloud agents building demos can use `/impeccable` skills (polish, audit, typeset, etc.) to maintain visual consistency with the portfolio.

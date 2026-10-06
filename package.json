@@ -13,6 +13,7 @@
     "build:home": "mkdir -p dist && cp apps/home/index.html dist/index.html"
   },
   "devDependencies": {
+    "impeccable": "^4.1.0",
     "turbo": "^2.3.3"
   },
   "engines": {
