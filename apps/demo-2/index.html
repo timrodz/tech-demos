@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo 2: WebGPU Compute Particle Simulation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+        overflow: hidden;
+      }
+
+      #canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(20, 20, 20, 0.9);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        padding: 20px;
+        min-width: 280px;
+        backdrop-filter: blur(10px);
+      }
+
+      .controls h3 {
+        margin: 0 0 16px 0;
+        font-size: 14px;
+        font-weight: 600;
+        color: #14b8a6;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .control-group {
+        margin-bottom: 16px;
+      }
+
+      .control-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .control-group label {
+        display: block;
+        font-size: 12px;
+        margin-bottom: 8px;
+        color: #aaa;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .control-group .value {
+        color: #14b8a6;
+        font-weight: 600;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        height: 4px;
+        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.1);
+        outline: none;
+        -webkit-appearance: none;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #14b8a6;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: #14b8a6;
+        cursor: pointer;
+        border: none;
+      }
+
+      input[type="color"] {
+        width: 100%;
+        height: 36px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .error {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(220, 38, 38, 0.9);
+        padding: 24px;
+        border-radius: 8px;
+        max-width: 500px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="controls">
+      <h3>Particle Controls</h3>
+      <div class="control-group">
+        <label>
+          <span>Particle Count</span>
+          <span class="value" id="count-value">10000</span>
+        </label>
+        <input type="range" id="count" min="1000" max="50000" step="1000" value="10000" />
+      </div>
+      <div class="control-group">
+        <label>
+          <span>Gravity</span>
+          <span class="value" id="gravity-value">50</span>
+        </label>
+        <input type="range" id="gravity" min="0" max="200" step="1" value="50" />
+      </div>
+      <div class="control-group">
+        <label>
+          <span>Particle Color</span>
+        </label>
+        <input type="color" id="color" value="#14b8a6" />
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
