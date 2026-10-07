@@ -54,10 +54,8 @@ async function main() {
   let particleBuffer = device.createBuffer({
     size: particleData.byteLength,
     usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
-    mappedAtCreation: true,
   });
-  new Float32Array(particleBuffer.getMappedRange()).set(particleData);
-  particleBuffer.unmap();
+  device.queue.writeBuffer(particleBuffer, 0, particleData);
 
   // Compute uniform buffer
   const computeUniformBuffer = device.createBuffer({
@@ -139,10 +137,8 @@ async function main() {
       particleBuffer = device.createBuffer({
         size: particleData.byteLength,
         usage: GPUBufferUsage.STORAGE | GPUBufferUsage.COPY_DST,
-        mappedAtCreation: true,
       });
-      new Float32Array(particleBuffer.getMappedRange()).set(particleData);
-      particleBuffer.unmap();
+      device.queue.writeBuffer(particleBuffer, 0, particleData);
       
       // Recreate bind groups
       computeBindGroup = device.createBindGroup({

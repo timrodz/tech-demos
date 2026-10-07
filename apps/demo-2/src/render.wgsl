@@ -21,7 +21,7 @@ fn vertexMain(@builtin(vertex_index) vertexIndex: u32, @builtin(instance_index) 
   let particle = particles[instanceIndex];
   
   // Create a small quad for each particle (6 vertices = 2 triangles)
-  let size = 0.005;
+  let size = 0.008;
   var positions = array<vec2f, 6>(
     vec2f(-size, -size),
     vec2f(size, -size),

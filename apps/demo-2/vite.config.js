@@ -6,7 +6,6 @@ export default defineConfig({
     outDir: '../../docs/demo-2',
     emptyOutDir: true
   },
-  assetsInclude: ['**/*.wgsl'],
   plugins: [
     {
       name: 'wgsl-loader',
