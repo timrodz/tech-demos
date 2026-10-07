@@ -4,10 +4,10 @@ A collection of hyper-specific technical demonstrations built with modern web te
 
 ## Live Demos
 
-All demos are publicly available at: **https://timrodz.github.io/tech-demos/**
+All demos are publicly available at: **https://tech-demos.timrodz.dev/**
 
 Individual demos:
-- [Demo 1: WebGPU UV Gradient](https://timrodz.github.io/tech-demos/demo-1/) - Animated shader using WebGPU
+- [Demo 1: WebGPU UV Gradient](https://tech-demos.timrodz.dev/demo-1/) - Animated shader using WebGPU
 
 ## What's inside
 

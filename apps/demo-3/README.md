@@ -57,13 +57,13 @@ cd apps/demo-3
 npm run dev
 ```
 
-This starts a dev server at `http://localhost:5173/tech-demos/demo-3/`.
+This starts a dev server at `http://localhost:5173/demo-3/`.
 
 The demo uses only local, pre-written content — no API keys, no network calls. It works as a pure static site.
 
 ## Live Demo
 
-[View Live Demo](https://timrodz.github.io/tech-demos/demo-3/)
+[View Live Demo](https://tech-demos.timrodz.dev/demo-3/)
 
 ## Technical details
 

@@ -47,7 +47,7 @@ From the repository root:
 npm run demo-2
 ```
 
-This will start a dev server at `http://localhost:5173/tech-demos/demo-2/` with the particle simulation.
+This will start a dev server at `http://localhost:5173/demo-2/` with the particle simulation.
 
 The demo opens automatically in your default browser. You'll need a **WebGPU-enabled browser** (Chrome 113+, Edge 113+, or similar) with **hardware GPU acceleration** enabled.
 
@@ -55,7 +55,7 @@ The demo opens automatically in your default browser. You'll need a **WebGPU-ena
 
 ## Live Demo
 
-[View Live Demo](https://timrodz.github.io/tech-demos/demo-2/)
+[View Live Demo](https://tech-demos.timrodz.dev/demo-2/)
 
 Once running, use the control panel in the top-right to experiment with particle count, gravity, and colors in real-time. Watch how particles bounce off walls with realistic energy loss (damping), and how velocity affects particle brightness.
 

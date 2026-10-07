@@ -38,6 +38,12 @@
         ],
         "createdAt": "2026-10-07T03:46:47.466Z",
         "reason": "Pre-existing published home page, matches apps/home/index.html"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "createdAt": "2026-10-07T22:52:06.374Z",
+        "reason": "Portfolio source of truth: timrodz/portfolio uses Mona Sans as its primary typeface"
       }
     ]
   }
