@@ -1,0 +1,44 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "apps/home/index.html"
+        ],
+        "createdAt": "2026-10-07T03:46:24.702Z",
+        "reason": "Pre-existing home page gradient, not modified by demo-3 addition"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "apps/home/index.html"
+        ],
+        "createdAt": "2026-10-07T03:46:24.704Z",
+        "reason": "Pre-existing home page design, not modified by demo-3 addition"
+      },
+      {
+        "rule": "ai-color-palette",
+        "value": "*",
+        "files": [
+          "docs/index.html"
+        ],
+        "createdAt": "2026-10-07T03:46:47.466Z",
+        "reason": "Pre-existing published home page, matches apps/home/index.html"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "docs/index.html"
+        ],
+        "createdAt": "2026-10-07T03:46:47.466Z",
+        "reason": "Pre-existing published home page, matches apps/home/index.html"
+      }
+    ]
+  }
+}
