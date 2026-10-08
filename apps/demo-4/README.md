@@ -2,6 +2,12 @@
 
 ![Guardrailed Generative UI Demo](./screenshot.png)
 
+*Progressive rendering in action: dashboard components appear as JSON streams in*
+
+![Guardrail rejection](./screenshot-guardrail.png)
+
+*Guardrail test: InvalidWidget component rejected mid-stream (yellow banner)*
+
 ## What it shows
 
 A live demonstration of catalog-constrained generative UI using Vercel Labs' json-render. Watch JSON stream in character-by-character (simulating LLM token generation) and progressively assemble into a dashboard—with only pre-approved components allowed.
