@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('../../docs/mona-sans.woff2') format('woff2');
+  font-weight: 400 600 700 800;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Mona Sans', Arial, sans-serif;
+  background: #fdfcfa;
+  color: #52525b;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
