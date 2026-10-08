@@ -50,14 +50,14 @@ All controls follow the design system's "Operate mode"—standard, familiar inte
 From the repository root:
 
 ```bash
-npm run demo-4
+bun run demo-4
 ```
 
 Or directly in the demo directory:
 
 ```bash
 cd apps/demo-4
-npm run dev
+bun run dev
 ```
 
 This starts a dev server at `http://localhost:5173/demo-4/`.

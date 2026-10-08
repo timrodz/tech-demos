@@ -7,11 +7,11 @@
   "scripts": {
     "demo-1": "cd apps/demo-1 && bun run dev",
     "demo-2": "cd apps/demo-2 && bun run dev",
-    "demo-3": "cd apps/demo-3 && npm run dev",
-    "demo-4": "cd apps/demo-4 && npm run dev",
+    "demo-3": "cd apps/demo-3 && bun run dev",
+    "demo-4": "cd apps/demo-4 && bun run dev",
     "build": "bun run build:clean && bun run build:demos && bun run build:home",
     "build:clean": "rm -rf dist",
-    "build:demos": "cd apps/demo-1 && bun run build && cd ../demo-2 && bun run build && cd ../demo-3 && npm run build && cd ../demo-4 && npm run build",
+    "build:demos": "cd apps/demo-1 && bun run build && cd ../demo-2 && bun run build && cd ../demo-3 && bun run build && cd ../demo-4 && bun run build",
     "build:home": "mkdir -p dist && cp apps/home/index.html dist/index.html"
   },
   "devDependencies": {

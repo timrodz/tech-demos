@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Renderer } from '@json-render/react';
+import { Renderer, JSONUIProvider } from '@json-render/react';
 import { registry } from './registry';
 import { validSpec, invalidComponentSpec } from './spec';
 import './App.css';
@@ -12,6 +12,7 @@ function App() {
   const [tokensPerSecond, setTokensPerSecond] = useState(30);
   const [injectInvalid, setInjectInvalid] = useState(false);
   const [rejectionNote, setRejectionNote] = useState('');
+  const [elementKeys, setElementKeys] = useState([]);
   const intervalRef = useRef(null);
 
   const fullJson = JSON.stringify(validSpec, null, 2);
@@ -23,6 +24,7 @@ function App() {
     setCharIndex(0);
     setIsStreaming(true);
     setRejectionNote('');
+    setElementKeys([]);
   };
 
   useEffect(() => {
@@ -34,28 +36,41 @@ function App() {
         setStreamedJson(newJson);
         setCharIndex(prev => prev + 1);
 
-        try {
-          const parsed = JSON.parse(newJson);
+        const builtSpec = {
+          root: 'dashboard',
+          elements: {}
+        };
+        
+        const allKeys = Object.keys(validSpec.elements);
+        const progressRatio = charIndex / chars.length;
+        const numKeysToShow = Math.max(2, Math.ceil(progressRatio * allKeys.length * 1.2));
+        const currentKeys = allKeys.slice(0, Math.min(numKeysToShow, allKeys.length));
+        
+        currentKeys.forEach(key => {
+          const element = { ...validSpec.elements[key] };
           
-          if (injectInvalid && charIndex === Math.floor(chars.length * 0.6)) {
-            const modifiedSpec = {
-              ...parsed,
-              elements: {
-                ...parsed.elements,
-                invalidComponent: invalidComponentSpec,
-              },
-            };
-            modifiedSpec.elements.dashboard.children = [
-              ...modifiedSpec.elements.dashboard.children,
-              'invalidComponent',
-            ];
-            setParsedSpec(modifiedSpec);
-            setRejectionNote('⚠️ Guardrail active: InvalidWidget component rejected (not in catalog)');
-          } else {
-            setParsedSpec(parsed);
+          if (element.children) {
+            element.children = element.children.filter(childKey => 
+              currentKeys.includes(childKey)
+            );
           }
-        } catch (e) {
+          
+          builtSpec.elements[key] = element;
+        });
+
+        if (injectInvalid && progressRatio >= 0.6 && progressRatio < 0.65) {
+          builtSpec.elements.invalidComponent = invalidComponentSpec;
+          if (builtSpec.elements.dashboard) {
+            builtSpec.elements.dashboard = {
+              ...builtSpec.elements.dashboard,
+              children: [...builtSpec.elements.dashboard.children, 'invalidComponent']
+            };
+          }
+          setRejectionNote('⚠️ Guardrail active: InvalidWidget component rejected (not in catalog)');
         }
+
+        setParsedSpec(builtSpec);
+        setElementKeys(currentKeys);
       }, interval);
     } else if (charIndex >= chars.length) {
       setIsStreaming(false);
@@ -137,7 +152,9 @@ function App() {
           </div>
           <div className="panel-content">
             {parsedSpec ? (
-              <Renderer spec={parsedSpec} registry={registry} />
+              <JSONUIProvider registry={registry}>
+                <Renderer spec={parsedSpec} registry={registry} />
+              </JSONUIProvider>
             ) : (
               <div className="placeholder">Stream will appear here...</div>
             )}
