@@ -8,6 +8,7 @@ All demos are publicly available at: **https://tech-demos.timrodz.dev/**
 
 Individual demos:
 - [Demo 1: WebGPU UV Gradient](https://tech-demos.timrodz.dev/demo-1/) - Animated shader using WebGPU
+- [Demo 5: Progressive Structured Object Streaming](https://tech-demos.timrodz.dev/demo-5/) - Zod-shaped JSON hydrates a typed itinerary card as keys arrive
 
 ## What's inside
 
