@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Demos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Mona Sans';
+      src: url('./mona-sans.woff2') format('woff2');
+      font-weight: 400 600 700 800;
+      font-display: swap;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Mona Sans', Arial, sans-serif;
+      background: #fdfcfa;
+      color: #52525b;
+      min-height: 100vh;
+      padding: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+    }
+    
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      color: #0f766e;
+      margin-bottom: 16px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+    
+    .subtitle {
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      color: #52525b;
+      margin-bottom: 48px;
+      line-height: 1.6;
+    }
+    
+    .demo-grid {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    
+    .demo-card {
+      display: block;
+      padding: 32px;
+      background: white;
+      border: 1px solid #d4d4d8;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      color: inherit;
+    }
+    
+    .demo-card:hover {
+      border-color: #0f766e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 118, 110, 0.12);
+    }
+    
+    .demo-card h2 {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      color: #0d9488;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .demo-card p {
+      color: #52525b;
+      line-height: 1.7;
+      font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
+    }
+    
+    .demo-meta {
+      margin-top: 16px;
+      font-size: 0.875rem;
+      color: #a1a1aa;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 400;
+    }
+    
+    footer {
+      border-top: 1px solid #e4e4e7;
+      padding-top: 32px;
+      margin-top: 64px;
+    }
+    
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    
+    footer p {
+      color: #71717a;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    
+    footer a {
+      color: #0f766e;
+      text-decoration: none;
+      text-decoration-line: underline;
+      text-decoration-color: #fb923c;
+      text-decoration-thickness: 0.1em;
+      text-underline-offset: 2px;
+      transition: all 0.2s ease;
+    }
+    
+    footer a:hover {
+      color: #0d9488;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 48px 20px 64px;
+      }
+      
+      .demo-card {
+        padding: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tech Demos</h1>
+    <p class="subtitle">A collection of hyper-specific technical demonstrations</p>
+    
+    <div class="demo-grid">
+      <a href="/demo-1/" class="demo-card">
+        <h2>Demo 1: WebGPU UV Gradient</h2>
+        <p>Animated UV gradient shader using WebGPU and vgpu. Showcases shader fundamentals with time-based animation and wave composition to create living gradients.</p>
+        <div class="demo-meta">Shipped: 2026-10-06</div>
+      </a>
+      
+      <a href="/demo-2/" class="demo-card">
+        <h2>Demo 2: WebGPU Compute Particle Simulation</h2>
+        <p>GPU-accelerated particle physics with compute shaders. 10,000+ particles simulated in real-time with gravity, velocity, and collision detection—entirely on the GPU at 60 FPS.</p>
+        <div class="demo-meta">Shipped: 2026-10-06</div>
+      </a>
+      
+      <a href="/demo-3/" class="demo-card">
+        <h2>Demo 3: Streaming Markdown Rendering</h2>
+        <p>Side-by-side comparison of naive markdown rendering vs Vercel's streamdown. Watch how unterminated syntax creates glitches during AI-style token streaming, and how streamdown repairs them on the fly.</p>
+        <div class="demo-meta">Shipped: 2026-10-07</div>
+      </a>
+      
+      <a href="/demo-4/" class="demo-card">
+        <h2>Demo 4: Guardrailed Generative UI</h2>
+        <p>Catalog-constrained generative UI using Vercel Labs json-render. Watch JSON stream token-by-token into a live dashboard—only pre-approved components render. Toggle the guardrail test to watch invalid components get rejected mid-stream.</p>
+        <div class="demo-meta">Shipped: 2026-10-08</div>
+      </a>
+      
+      <a href="/demo-5/" class="demo-card">
+        <h2>Demo 5: Progressive Structured Object Streaming</h2>
+        <p>Client-only streamObject / useObject: a Zod-shaped itinerary streams in as partial JSON and hydrates a typed boarding-pass card field by field. Pending slots wait for keys that have not arrived yet; raw JSON sits beside the live card.</p>
+        <div class="demo-meta">Shipped: 2026-10-09</div>
+      </a>
+    </div>
+    
+    <footer>
+      <div class="footer-content">
+        <p>View source on <a href="https://github.com/timrodz/tech-demos" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+        <p>&copy; 2026 <a href="https://timrodz.dev" target="_blank" rel="noopener noreferrer">Juan Rodríguez Morais</a></p>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
